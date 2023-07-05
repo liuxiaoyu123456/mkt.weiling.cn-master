@@ -1,0 +1,93 @@
+//文字超过1行
+%ov1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /*! autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+//文字超过2行
+%ov2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /*! autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    -webkit-line-clamp: 2;
+}
+
+//文字超过3行
+%ov3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /*! autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    -webkit-line-clamp: 3;
+}
+
+//弹性布局
+%flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+//弹性布局（方向竖排）
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+%flex-vertical {
+    display: flex;
+    align-items: center;
+}
+
+//模块的标题
+%box-title {
+    color: #5b5b5b;
+    font-size: j(28);
+    text-align: center;
+}
+
+//模态框
+%modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+//全屏
+%fullPage {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+//整体上移并圆角显示
+%moveUpAndRadius {
+    border-radius: 10px;
+    position: relative;
+    top: j(-20);
+}
+
+//背景图片常用设置
+%backgroundPicture {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}

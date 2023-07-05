@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>集客通</title>
+
+    <style>
+      html {
+        background-color: #f4f9fd;
+      }
+      body {
+        margin: 0;
+      }
+      .jkt-container {
+        padding: 4.25vw 3.7vw;
+      }
+      .jkt-container .card {
+        position: relative;
+        background: #ffffff;
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.08);
+        border-radius: 2vw;
+      }
+      .jkt-container .install {
+        padding: 4.8vw 2vw 0;
+        margin-bottom: 4.25vw;
+      }
+      .jkt-container .install .fire {
+        position: absolute;
+        width: 8.5vw;
+        right: 4.25vw;
+      }
+      .jkt-container .install .title {
+        font-size: 4.25vw;
+        line-height: 6.4vw;
+        color: #18191a;
+        margin-bottom: 2.4vw;
+        padding: 0 3vw;
+      }
+      .jkt-container .install .des {
+        font-size: 3.7vw;
+        line-height: 5.6vw;
+        margin-bottom: 7vw;
+        padding: 0 3vw;
+      }
+      .jkt-container .install .login-demo {
+        width: 100%;
+      }
+      .jkt-container .web-link {
+        padding: 3vw;
+      }
+      .jkt-container .web-link > p {
+        color: #303233;
+        font-size: 3.7vw;
+      }
+      .jkt-container .web-link > p span {
+        color: #919699;
+      }
+      .jkt-container .copy-wrap {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      .jkt-container .copy-wrap > input {
+        flex: 1;
+        height: 9.6vw;
+        box-sizing: border-box;
+        border: 1px solid #e4e9ed;
+        border-radius: 1.6vw;
+        font-size: 4.25vw;
+        padding-left: 2vw;
+      }
+      .jkt-container .copy-wrap .copy-btn {
+        width: 21vw;
+        height: 9.6vw;
+        background: #ffffff;
+        border: 1px solid #e4e9ed;
+        border-radius: 1.6vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #616466;
+        font-size: 4.25vw;
+        margin-left: 1.8vw;
+      }
+
+      .xw-box{
+        position: fixed;
+        bottom: 25vw;
+        right: 2.4vw;
+        z-index: 7;
+        display: flex;
+        align-items: center;
+      }
+      .xw-box .xw-pic-box{
+        width: 15.4vw;
+        height: 15.4vw;
+        border: 0.725px solid #DCE1E5;
+        box-shadow: 0px 0px 4.8vw rgba(0, 0, 0, 0.08);
+        border-radius: 50%;
+        flex-shrink: 0;
+        /* overflow: hidden; */
+      }
+      .xw-box .tip{
+        position: relative;
+        color: #2F2F2F;
+        font-size: 3.3vw;
+        padding: 2.6vw;
+        background-color: #ffffff;
+        border-radius: 2vw;
+        margin-right: 4vw;
+        box-shadow: 0px 0px 5vw rgba(0, 0, 0, 0.08);
+      }
+      .xw-box .tip::after{
+        content: '';
+        position: absolute;
+        bottom: 3vw;
+        right: -2vw;
+        width:0;
+        height:0;
+        border-left:2vw solid transparent;
+        border-right:2vw solid #fff;
+        border-bottom:2vw solid transparent;
+        transform: rotate(45deg);
+      }
+      .xw-box .xw-pic-box img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      } 
+
+      .link-xw{
+        position: fixed;
+        background: rgba(0, 0, 0, 0.45);
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 9;
+        display: none;
+      }
+      .link-xw .link-xw-content{
+        position: relative;
+        width: 77vw;
+        height: 69vw;
+        background-color: #fff;
+        margin: 40vw auto 0;
+        border-radius: 4.25vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding-top: 8vw;
+        z-index: 2;
+      }
+
+      .mask{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+      }
+
+      .link-xw .link-xw-content .colse{
+        position: absolute;
+        right: -9vw;
+        top: -9vw;
+        background: #EAEAEA;
+        width: 18vw;
+        height: 18vw;
+        border-radius: 50%;
+        z-index: 3;
+      }
+      .link-xw .link-xw-content .colse >img{
+        position: absolute;
+        width: 4.25vw;
+        left: 3vw;
+        bottom: 3vw;
+      }
+      .link-xw .link-xw-content .title{
+        color: #18191A;
+        font-weight: 600;
+        font-size: 4vw;
+        line-height: 7.46vw;
+      }
+      .link-xw .link-xw-content .des{
+        color: #616466;
+        font-size: 3.7vw;
+        line-height: 6.4vw;
+        margin-bottom: 6.4vw;
+      }
+      .link-xw .link-xw-content .code{
+        width: 33.6vw;
+        height: 33.6vw;
+      }
+
+      .notice-box{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 10vw;
+        background-color: #58d199;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 4vw;
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      .ani-in{
+        animation: in .3s;
+        animation-fill-mode:forwards;
+      }
+      .ani-out{
+        animation: out .3s;
+        animation-fill-mode:forwards;
+      }
+      .bold{
+        font-weight: 600;
+      }
+
+      @keyframes in{
+        from{
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0);
+            opacity: 1;
+        }
+      }
+      @keyframes out{
+        from{
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to{
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jkt-container">
+      <div class="card install">
+        <img class="fire" src="./imgs/fire.png" alt="fire" />
+        <div class="title">应用安装成功</div>
+        <div class="des">请在 <span class="bold">电脑</span> 上点击【去登录】按钮，进入登录页面</div>
+        <img class="login-demo" src="./imgs/login-demo.png" alt="login-demo" />
+      </div>
+
+      <div class="card web-link">
+        <p>
+          <span style="position: relative;top: -8px;">或</span
+          ><br />点击下方【复制】按钮，在 <span class="bold">电脑</span> 的浏览器中打开该链接，并扫码登录集客通
+        </p>
+        <div class="copy-wrap">
+          <input disabled value="https://mkt.weiling.cn" />
+          <div class="copy-btn" onclick="copy('https\://mkt.weiling.cn')">复制</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="xw-box" id="xwBox">
+        <div style="flex-shrink: 0;">
+            <div class="tip">
+                点击头像即可联系小微~
+            </div>
+        </div>
+        <div class="xw-pic-box">
+            <img onclick="openDia()" src="https://wlmvp-cos.weiling.cn/worktable-erp/images/xiaowei_zhuli.png?v=22" alt="xw">
+        </div>
+    </div>
+
+    <div class="link-xw" id="linkXW">
+        <div class="mask" onclick="closeDia()"></div>
+        <div class="link-xw-content">
+            <div class="colse" onclick="closeDia()">
+                <img src="./imgs/close.png" alt="colse">
+            </div>
+            <div class="title">是遇到什么问题了吗？</div>
+            <div class="des">长按扫码，添加小微为好友</div>
+            <img class="code" src="./imgs/xiaowei.png" alt="code">
+        </div>
+    </div>
+
+    <div class="notice-box" id="notice">
+        <span>复制成功！</span>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    function copy(str) {
+      var save = function (e) {
+        e.clipboardData.setData("text/plain", str); //下面会说到clipboardData对象
+        e.preventDefault(); //阻止默认行为
+      };
+      document.addEventListener("copy", save);
+      document.execCommand("copy"); //使文档处于可编辑状态，否则无效
+      showNotice()
+    }
+
+    function closeDia(){
+        let linkXW = document.querySelector('#linkXW');
+        linkXW.style.display = 'none'
+    }
+    function openDia(){
+        let linkXW = document.querySelector('#linkXW');
+        linkXW.style.display = 'flex'
+    }
+    function showNotice(){
+        let notice = document.querySelector('#notice');
+        notice.classList.add('ani-in');
+        notice.classList.remove('ani-out');
+        setTimeout(()=>{
+            notice.classList.add('ani-out');
+            notice.classList.remove('ani-in');
+        },3000)
+    }
+
+    window.onload = function() {
+      let drag = document.querySelector('#xwBox .xw-pic-box');
+      let dragTraget = document.querySelector('#xwBox');
+      drag.addEventListener('touchstart',function(e){
+        e = e || window.event  
+      })
+      drag.addEventListener('touchmove',function(e){
+        e = e || window.event
+        dragTraget.style.right = (window.innerWidth - (e.touches[0].clientX+drag.clientWidth/2)) + 'px';
+        dragTraget.style.bottom = (window.innerHeight - (e.touches[0].clientY + drag.clientWidth/2)) + 'px';
+      })
+      drag.addEventListener('touchend',function(e){
+        e = e || window.event  
+        dragTraget.style.right = '2.4vw';
+      })
+    }
+  </script>
+</html>

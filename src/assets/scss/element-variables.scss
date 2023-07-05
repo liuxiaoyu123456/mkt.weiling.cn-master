@@ -1,0 +1,218 @@
+/* 改变主题色变量 */
+//$--color-primary: teal;
+//$--border-radius: 10px;
+$--border-radius-base: 10px !default;
+
+// .el-checkbox__inner {
+//   border-radius: 50% !important;
+// }
+
+.el-upload,
+.el-upload-dragger {
+  width: 100% !important;
+}
+
+.commoon_dialog_medium.el-dialog {
+  border-radius: 10px;
+  .el-dialog__header {
+    height: initial;
+    padding: 20px 20px 10px;
+    border-bottom: none;
+    .el-dialog__title {
+      position: initial;
+      color: #000000;
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+  .el-button {
+    margin-left: 20px !important;
+  }
+  .cell .el-tooltip {
+    white-space: pre-line !important;
+  }
+  .el-dialog__close {
+    font-size: 24px !important;
+  }
+  .el-dialog__body {
+    padding: 0 20px;
+  }
+  .el-dialog__footer {
+    border-top: none;
+    padding-top: 10px;
+  }
+}
+
+.msg_content_tooltip.el-popper {
+  max-width: 420px;
+}
+
+.el-popup-parent--hidden{
+  padding-right: 0 !important;
+}
+.el-dialog {
+  .el-dialog__close.el-icon {
+    font-size: 24px;
+  }
+}
+
+.el-dialog.screen-center{
+  margin-top: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.el-cascader-panel {
+  .el-scrollbar.el-cascader-menu {
+    .el-cascader-menu__wrap.el-scrollbar__wrap {
+      height: 100%;
+      .el-checkbox{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.other-column-popper.el-popper.is-dark {
+  white-space: pre-line;
+}
+
+.w_tag_choose {
+  .el-icon.el-tag__close {
+    display: none;
+  }
+  .single_select {
+    .el-select__tags-text {
+      max-width: 130px !important;
+      font-weight: 500;
+      justify-content: initial;
+    }
+    .el-tag--info {
+      background: var(--wl-primary-color-light);
+      border-radius: 20px;
+      color: var(--wl-primary-color-dark);
+      font-weight: 500;
+    }
+  }
+  
+}
+.tag_ele_select {
+  display: none;
+  .el-select-dropdown__empty {
+    display: none;
+  }
+  
+  .el-select__tags-text {
+    max-width: 84px;
+    .el-tag__close {
+      display: none;
+    }
+  }
+}
+// 隐藏svg图片上的title
+.el-icon svg {
+  pointer-events: none;
+}
+
+.w_tag_dialog {
+  .el-dialog__body {
+    box-sizing: border-box;
+    height: 560px;
+  }
+}
+
+// .el-button.el-button--primary {
+//   &:focus {
+//     background-color: rgb(64, 158, 255)
+//   }
+// }
+.clear-not .el-color-dropdown__link-btn {
+  display: none;
+}
+// mac 禁用输入框颜色兼容
+:root {
+  --el-disabled-bg-color: var(--wl-line-color-light);
+  --el-disabled-text-color: var(--wl-text-color-placeholder);
+  .el-input.is-disabled .el-input__inner{
+    background-color: var(--el-disabled-bg-color);
+  }
+}
+
+.wl-select-option-slot {
+  .el-select-dropdown__wrap {
+    max-height: 400px;
+  }
+  .el-select-dropdown__item {
+    padding: 0 16px;
+    height: initial;
+    line-height: initial;
+  }
+  .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
+    background-color: initial
+  }
+}
+
+.company_user_popover.el-popper {
+  z-index: 5000 !important;
+  padding-right: 0 !important;
+}
+// 按钮样式的单选框,el-radio-group添加button-radios类应用样式
+.el-radio-group.button-radios {
+  background: var(--wl-btn-dashed-bg);
+  border-radius: 6px;
+  .el-radio-button--default {
+    &.el-radio-button {
+      box-sizing: border-box;
+      height: 36px;
+      padding: 3px;
+      &.is-active:focus{
+        box-shadow: none;
+      }
+
+      &:not(:first-child)::after {
+        content: "";
+        position: absolute;
+        height: 14px;
+        width: 1px;
+        background-color: var(--wl-line-color-dark);
+        top: 11px;
+        left: 0;
+        transition: 0.3s;
+      }
+      &.is-active {
+        &::after,
+        & + .el-radio-button::after {
+          background-color: transparent;
+        }
+      }
+      &.is-disabled {
+        .el-radio-button__inner {
+          display: flex;
+          color: var(--wl-text-color-placeholder);
+        }
+      }
+    }
+    .el-radio-button {
+      &__inner {
+        display: block;
+        color: var(--wl-text-color-primary-3);
+        padding: 8px 16px;
+        border: none;
+        background-color: transparent;
+      }
+      &__original-radio:checked + .el-radio-button__inner {
+        color: var(--wl-primary-color);
+        background: #ffffff;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08) !important;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.dialog_company_list.el-dialog {
+  .el-dialog__body {
+    padding-top: 0;
+  }
+}
+

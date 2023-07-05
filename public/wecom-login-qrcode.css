@@ -1,0 +1,5 @@
+.impowerBox .title {display: none;}
+.impowerBox .info {display: none;}
+.status_icon {display: none !important;}
+.impowerBox .status {text-align: center;}
+.impowerBox .wrp_code_iframe {margin-top: 0px !important;}

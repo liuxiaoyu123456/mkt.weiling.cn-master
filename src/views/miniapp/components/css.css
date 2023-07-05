@@ -1,0 +1,30 @@
+.developer .form-list{
+  padding: 10px;
+  width: 40%;
+  position: relative;
+}
+.developer .form-list .title{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--wl-text-color-primary-2);
+  position: relative;
+}
+.developer .form-list .msg{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #B5B5B5;
+  margin-top: 5px;
+}
+.developer .form-list .title::after{
+  content: "*";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  color: var(--wl-error-color);
+}
+.el-button {
+	width: 96px;
+	height: 40px;
+}
